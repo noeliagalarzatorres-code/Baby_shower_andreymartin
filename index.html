@@ -26,7 +26,6 @@
       border-radius:25px;
       padding:30px;
       box-shadow:0 10px 30px rgba(0,0,0,0.1);
-      overflow:hidden;
     }
 
     h1{
@@ -41,25 +40,15 @@
       background:#fff5ef;
       padding:20px;
       border-radius:20px;
-      margin-bottom:30px;
+      margin-bottom:20px;
       border:2px dashed #e4b9a5;
     }
 
-    .welcome h2{
-      font-size:2rem;
-      margin-bottom:10px;
-      color:#b27660;
-    }
-
-    .welcome p{
-      font-size:1.2rem;
-      line-height:1.7;
-    }
-
-    .subtitle{
-      text-align:center;
-      margin-bottom:30px;
-      font-size:1.2rem;
+    .hero-img{
+      width:100%;
+      border-radius:20px;
+      margin:15px 0;
+      box-shadow:0 8px 20px rgba(0,0,0,0.15);
     }
 
     .animals{
@@ -71,20 +60,15 @@
     }
 
     .animal{
-      width:120px;
-      height:120px;
+      width:110px;
+      height:110px;
       border-radius:50%;
       background:#fff5ef;
       display:flex;
       align-items:center;
       justify-content:center;
-      font-size:60px;
+      font-size:55px;
       box-shadow:0 5px 15px rgba(0,0,0,0.08);
-      transition:0.3s;
-    }
-
-    .animal:hover{
-      transform:scale(1.08);
     }
 
     .question{
@@ -95,18 +79,12 @@
       border:2px solid #f5d6c6;
     }
 
-    .question h3{
-      margin-bottom:15px;
-      color:#8b5e4d;
-    }
-
     label{
       display:block;
       margin:8px 0;
       cursor:pointer;
       padding:8px;
       border-radius:10px;
-      transition:0.2s;
     }
 
     label:hover{
@@ -123,17 +101,11 @@
       color:white;
       font-size:1.1rem;
       cursor:pointer;
-      transition:0.3s;
-    }
-
-    button:hover{
-      background:#c58d78;
-      transform:scale(1.05);
     }
 
     #resultado{
       text-align:center;
-      font-size:2rem;
+      font-size:1.6rem;
       margin-top:30px;
       color:#7b4f3f;
       font-weight:bold;
@@ -142,28 +114,6 @@
       border-radius:20px;
     }
 
-    .footer{
-      text-align:center;
-      margin-top:40px;
-      color:#9c7f72;
-      font-size:0.95rem;
-    }
-
-    @media(max-width:700px){
-      h1{
-        font-size:2.2rem;
-      }
-
-      .animal{
-        width:90px;
-        height:90px;
-        font-size:45px;
-      }
-
-      .welcome h2{
-        font-size:1.6rem;
-      }
-    }
   </style>
 </head>
 
@@ -171,15 +121,17 @@
 
 <div class="container">
 
+  <!-- 🔼 IMAGEN INICIO -->
+  <img class="hero-img" 
+       src="https://raw.githubusercontent.com/noeliagalarzatorres-code/Baby_shower_andreymartin/main/IMG_20260508_211650.jpg" 
+       alt="Baby Shower Andrea y Martin">
+
   <h1>🍼 Baby Shower 🍼</h1>
 
   <div class="welcome">
     <h2>✨ Andrea y Martin ✨</h2>
-
     <p>
-      ¡Vamos a jugar para celebrar la llegada de su nuevo tesoro! 👶🏼💛
-      <br><br>
-      Respondé las 20 preguntas y descubrí cuánto sabés sobre bebés.
+      👶🏼💛 Vamos a jugar para celebrar la llegada de su nuevo tesoro 💛👶🏼
     </p>
   </div>
 
@@ -196,193 +148,66 @@
 
   <div id="resultado"></div>
 
-  <div class="footer">
-    Woodland Baby Shower 🌿
-  </div>
+  <!-- 🔽 IMAGEN FINAL -->
+  <img class="hero-img" 
+       src="https://raw.githubusercontent.com/noeliagalarzatorres-code/Baby_shower_andreymartin/main/IMG_20260508_211632.jpg" 
+       alt="Final Baby Shower">
 
 </div>
 
 <script>
-
 const preguntas = [
-{
-pregunta:"¿Cuántos dientes de leche tiene un bebé?",
-opciones:["10","20","32"],
-correcta:"20"
-},
-{
-pregunta:"¿A qué edad suelen empezar a caminar los bebés?",
-opciones:["6 meses","12 meses","3 años"],
-correcta:"12 meses"
-},
-{
-pregunta:"¿Cuál es el mejor alimento para un recién nacido?",
-opciones:["Leche materna","Pizza","Chocolate"],
-correcta:"Leche materna"
-},
-{
-pregunta:"¿Cuántas horas duerme un recién nacido aproximadamente?",
-opciones:["4 horas","16 horas","8 horas"],
-correcta:"16 horas"
-},
-{
-pregunta:"¿Qué color ven primero los bebés?",
-opciones:["Rojo","Azul","Negro"],
-correcta:"Rojo"
-},
-{
-pregunta:"¿Cuál es el primer sentido que desarrolla un bebé?",
-opciones:["Vista","Tacto","Oído"],
-correcta:"Oído"
-},
-{
-pregunta:"¿Qué usan los bebés para calmar las encías?",
-opciones:["Mordillo","Celular","Caramelos"],
-correcta:"Mordillo"
-},
-{
-pregunta:"¿Cuál es la temperatura normal de un bebé?",
-opciones:["37°C","40°C","34°C"],
-correcta:"37°C"
-},
-{
-pregunta:"¿Cuántos huesos tiene un bebé al nacer?",
-opciones:["300","150","80"],
-correcta:"300"
-},
-{
-pregunta:"¿Qué hacen muchos bebés al escuchar música?",
-opciones:["Bailan","Lloran siempre","Duermen instantáneamente"],
-correcta:"Bailan"
-},
-{
-pregunta:"¿Cuál es una señal de sueño en bebés?",
-opciones:["Frotarse los ojos","Aplaudir","Correr"],
-correcta:"Frotarse los ojos"
-},
-{
-pregunta:"¿Qué objeto usan los bebés para dormir?",
-opciones:["Cuna","Escritorio","Sillón gamer"],
-correcta:"Cuna"
-},
-{
-pregunta:"¿Qué animal suele representar ternura en baby showers?",
-opciones:["Zorrito","Tiburón","Cocodrilo"],
-correcta:"Zorrito"
-},
-{
-pregunta:"¿Qué necesitan cambiar los bebés varias veces al día?",
-opciones:["Pañales","Zapatos","Sombreros"],
-correcta:"Pañales"
-},
-{
-pregunta:"¿Cuál es un juguete clásico de bebé?",
-opciones:["Sonajero","PlayStation","Drone"],
-correcta:"Sonajero"
-},
-{
-pregunta:"¿Qué hacen los bebés cuando tienen hambre?",
-opciones:["Lloran","Silban","Saltan"],
-correcta:"Lloran"
-},
-{
-pregunta:"¿Cómo se llama el médico de bebés y niños?",
-opciones:["Pediatra","Dentista","Veterinario"],
-correcta:"Pediatra"
-},
-{
-pregunta:"¿Qué usan los bebés para tomar leche?",
-opciones:["Mamadera","Taza de café","Botella deportiva"],
-correcta:"Mamadera"
-},
-{
-pregunta:"¿Qué celebramos en un baby shower?",
-opciones:["La llegada del bebé","Un cumpleaños","Navidad"],
-correcta:"La llegada del bebé"
-},
-{
-pregunta:"¿Qué suelen usar los bebés para gatear cómodos?",
-opciones:["Ropa suave","Botas de montaña","Traje elegante"],
-correcta:"Ropa suave"
-}
+{pregunta:"¿Cuántos dientes de leche tiene un bebé?",opciones:["10","20","32"],correcta:"20"},
+{pregunta:"¿A qué edad suelen empezar a caminar los bebés?",opciones:["6 meses","12 meses","3 años"],correcta:"12 meses"},
+{pregunta:"¿Cuál es el mejor alimento para un recién nacido?",opciones:["Leche materna","Pizza","Chocolate"],correcta:"Leche materna"},
+{pregunta:"¿Cuántas horas duerme un recién nacido?",opciones:["4","16","8"],correcta:"16"},
+{pregunta:"¿Qué hacen los bebés cuando tienen hambre?",opciones:["Lloran","Silban","Saltan"],correcta:"Lloran"}
 ];
 
 const quizForm = document.getElementById("quizForm");
 
-preguntas.forEach((q,index)=>{
-
+preguntas.forEach((q,i)=>{
 let div = document.createElement("div");
 div.classList.add("question");
 
-let contenido = `<h3>${index+1}. ${q.pregunta}</h3>`;
+let html = `<h3>${i+1}. ${q.pregunta}</h3>`;
 
 q.opciones.forEach(op=>{
-contenido += `
+html += `
 <label>
-<input type="radio" name="pregunta${index}" value="${op}">
+<input type="radio" name="p${i}" value="${op}">
 ${op}
-</label>
-`;
+</label>`;
 });
 
-div.innerHTML = contenido;
+div.innerHTML = html;
 quizForm.appendChild(div);
-
 });
 
 function calcularPuntaje(){
 
-let puntaje = 0;
+let puntos = 0;
 
-preguntas.forEach((q,index)=>{
-const respuesta = document.querySelector(`input[name="pregunta${index}"]:checked`);
-
-if(respuesta && respuesta.value === q.correcta){
-puntaje++;
-}
+preguntas.forEach((q,i)=>{
+const r = document.querySelector(`input[name="p${i}"]:checked`);
+if(r && r.value === q.correcta) puntos++;
 });
-
-const resultado = document.getElementById("resultado");
 
 let mensaje = "";
 
-if(puntaje <= 7){
-mensaje = `
-😅 Sabés muy poco sobre bebés.
-<br><br>
-🚫 Definitivamente NO estás capacitado para cuidar al nuevo integrante de la familia de Andrea y Martin.
-<br><br>
-🍼 ¡Necesitás más práctica cambiando pañales!
-`;
+if(puntos <= 7){
+mensaje = "😅 Sabés poco… NO estás capacitado para cuidar al bebé 👶🏼 (Andrea y Martin no te dejan 😂)";
 }
-else if(puntaje <= 14){
-mensaje = `
-😊 Sabés algo sobre bebés.
-<br><br>
-⚠️ Tal vez Andrea y Martin te dejarían cuidar al bebé… pero solo por 5 minutos 😂
-`;
+else if(puntos <= 14){
+mensaje = "😊 Sabés algo… podrías ayudar, pero bajo supervisión 😆";
 }
 else{
-mensaje = `
-🌟 ¡Sabés muchísimo sobre bebés!
-<br><br>
-✅ Estás oficialmente capacitado para ayudar a cuidar al nuevo integrante de la familia de Andrea y Martin 👶🏼💛
-`;
+mensaje = "🌟 ¡Experto total! Estás totalmente capacitado para cuidar al bebé 👶🏼💛";
 }
 
-resultado.innerHTML = `
-🎉 Tu puntaje fue: ${puntaje} / 20 🎉
-<br><br>
-${mensaje}
-`;
-
-window.scrollTo({
-top: document.body.scrollHeight,
-behavior: "smooth"
-});
-
+document.getElementById("resultado").innerHTML =
+`🎉 Puntaje: ${puntos}/20 <br><br>${mensaje}`;
 }
-
 </script>
 
 </body>
