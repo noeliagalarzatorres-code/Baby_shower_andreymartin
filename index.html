@@ -113,7 +113,6 @@
       padding:25px;
       border-radius:20px;
     }
-
   </style>
 </head>
 
@@ -121,18 +120,15 @@
 
 <div class="container">
 
-  <!-- 🔼 IMAGEN INICIO -->
-  <img class="hero-img" 
-       src="https://raw.githubusercontent.com/noeliagalarzatorres-code/Baby_shower_andreymartin/main/IMG_20260508_211650.jpg" 
-       alt="Baby Shower Andrea y Martin">
+  <!-- IMAGEN INICIO -->
+  <img class="hero-img"
+    src="https://raw.githubusercontent.com/noeliagalarzatorres-code/Baby_shower_andreymartin/main/IMG_20260508_211650.jpg">
 
   <h1>🍼 Baby Shower 🍼</h1>
 
   <div class="welcome">
     <h2>✨ Andrea y Martin ✨</h2>
-    <p>
-      👶🏼💛 Vamos a jugar para celebrar la llegada de su nuevo tesoro 💛👶🏼
-    </p>
+    <p>👶🏼💛 Vamos a jugar para celebrar la llegada de su nuevo tesoro 💛👶🏼</p>
   </div>
 
   <div class="animals">
@@ -148,23 +144,38 @@
 
   <div id="resultado"></div>
 
-  <!-- 🔽 IMAGEN FINAL -->
-  <img class="hero-img" 
-       src="https://raw.githubusercontent.com/noeliagalarzatorres-code/Baby_shower_andreymartin/main/IMG_20260508_211632.jpg" 
-       alt="Final Baby Shower">
+  <!-- IMAGEN FINAL -->
+  <img class="hero-img"
+    src="https://raw.githubusercontent.com/noeliagalarzatorres-code/Baby_shower_andreymartin/main/IMG_20260508_211632.jpg">
 
 </div>
 
 <script>
+
 const preguntas = [
 {pregunta:"¿Cuántos dientes de leche tiene un bebé?",opciones:["10","20","32"],correcta:"20"},
 {pregunta:"¿A qué edad suelen empezar a caminar los bebés?",opciones:["6 meses","12 meses","3 años"],correcta:"12 meses"},
-{pregunta:"¿Cuál es el mejor alimento para un recién nacido?",opciones:["Leche materna","Pizza","Chocolate"],correcta:"Leche materna"},
-{pregunta:"¿Cuántas horas duerme un recién nacido?",opciones:["4","16","8"],correcta:"16"},
-{pregunta:"¿Qué hacen los bebés cuando tienen hambre?",opciones:["Lloran","Silban","Saltan"],correcta:"Lloran"}
+{pregunta:"¿Cuál es el mejor alimento para un recién nacido?",opciones:["Leche materna","Cereales","Chocolate"],correcta:"Leche materna"},
+{pregunta:"¿Cuántas horas duerme un recién nacido?",opciones:["20","16","12"],correcta:"20"},
+{pregunta:"¿Qué color ven primero los bebés?",opciones:["Rojo","Azul","Negro"],correcta:"Rojo"},
+{pregunta:"¿Cuál es el primer sentido que desarrolla un bebé?",opciones:["Vista","Tacto","Oído"],correcta:"Oído"},
+{pregunta:"¿Qué usan los bebés para calmar encías?",opciones:["Mordillo","Celular","Caramelo"],correcta:"Mordillo"},
+{pregunta:"¿Cuál es la temperatura normal de un bebé?",opciones:["37°C","40°C","34°C"],correcta:"37°C"},
+{pregunta:"¿Cuántos huesos tiene un bebé al nacer?",opciones:["300","150","80"],correcta:"300"},
+{pregunta:"¿Qué hacen los bebés al escuchar música?",opciones:["Bailan","Lloran","Duermen"],correcta:"Bailan"},
+{pregunta:"¿Señal de sueño en bebés?",opciones:["Frotarse ojos","Mover las manos","Hacer pis"],correcta:"Frotarse ojos"},
+{pregunta:"¿Dónde duermen los bebés?",opciones:["Cuna","Silla","Sofá"],correcta:"Cuna"},
+{pregunta:"Animal típico baby shower?",opciones:["Zorrito","Tiburón","Tortuga"],correcta:"Zorrito"},
+{pregunta:"¿Qué cambian mucho los bebés?",opciones:["Pañales","Zapatos","Calcetines"],correcta:"Pañales"},
+{pregunta:"Juguete clásico bebé?",opciones:["Sonajero","PS5","Tablet"],correcta:"Sonajero"},
+{pregunta:"Cuando tienen hambre?",opciones:["Lloran","Mueven lengua","Ríen"],correcta:"Lloran"},
+{pregunta:"Médico de bebés?",opciones:["Pediatra","Ginecólogo","Hematólogo"],correcta:"Pediatra"},
+{pregunta:"Para tomar leche usan?",opciones:["Mamadera","Vaso","Taza"],correcta:"Mamadera"},
+{pregunta:"No puede faltar en el bolso del bebé nunca?",opciones:["Ibuprofeno","Pañales","Perfume"],correcta:"Bebé"},
+{pregunta:"Para gatear usan ropa?",opciones:["Suave","Pesada","Rígida"],correcta:"Suave"}
 ];
 
-const quizForm = document.getElementById("quizForm");
+const form = document.getElementById("quizForm");
 
 preguntas.forEach((q,i)=>{
 let div = document.createElement("div");
@@ -181,7 +192,7 @@ ${op}
 });
 
 div.innerHTML = html;
-quizForm.appendChild(div);
+form.appendChild(div);
 });
 
 function calcularPuntaje(){
@@ -196,18 +207,19 @@ if(r && r.value === q.correcta) puntos++;
 let mensaje = "";
 
 if(puntos <= 7){
-mensaje = "😅 Sabés poco… NO estás capacitado para cuidar al bebé 👶🏼 (Andrea y Martin no te dejan 😂)";
+mensaje = "😅 Sabés muy poco… Creo que no estás capacitado para cuidar al bebé, pero puedes empezar a practicar con un bebote 👶🏼😂";
 }
 else if(puntos <= 14){
-mensaje = "😊 Sabés algo… podrías ayudar, pero bajo supervisión 😆";
+mensaje = "😊 Sabés algo… podrías ayudar, pero con supervisión 😆";
 }
 else{
-mensaje = "🌟 ¡Experto total! Estás totalmente capacitado para cuidar al bebé 👶🏼💛";
+mensaje = "🌟 ¡SÚPER EXPERTO! Totalmente capacitado para cuidar al bebé. Apúntate para cuidar al bebé durante una salida romántica de los chicos 👶🏼💛";
 }
 
 document.getElementById("resultado").innerHTML =
-`🎉 Puntaje: ${puntos}/20 <br><br>${mensaje}`;
+`🎉 Puntaje: ${puntos}/20 🎉<br><br>${mensaje}`;
 }
+
 </script>
 
 </body>
