@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Baby Shower Quiz</title>
+  <title>Baby Shower Andrea y Martin</title>
 
   <style>
     *{
@@ -32,8 +32,28 @@
     h1{
       text-align:center;
       font-size:3rem;
-      margin-bottom:10px;
+      margin-bottom:15px;
       color:#9c6b5c;
+    }
+
+    .welcome{
+      text-align:center;
+      background:#fff5ef;
+      padding:20px;
+      border-radius:20px;
+      margin-bottom:30px;
+      border:2px dashed #e4b9a5;
+    }
+
+    .welcome h2{
+      font-size:2rem;
+      margin-bottom:10px;
+      color:#b27660;
+    }
+
+    .welcome p{
+      font-size:1.2rem;
+      line-height:1.7;
     }
 
     .subtitle{
@@ -117,6 +137,9 @@
       margin-top:30px;
       color:#7b4f3f;
       font-weight:bold;
+      background:#fff5ef;
+      padding:25px;
+      border-radius:20px;
     }
 
     .footer{
@@ -136,6 +159,10 @@
         height:90px;
         font-size:45px;
       }
+
+      .welcome h2{
+        font-size:1.6rem;
+      }
     }
   </style>
 </head>
@@ -144,12 +171,17 @@
 
 <div class="container">
 
-  <h1>🍼 Baby Shower Quiz 🍼</h1>
+  <h1>🍼 Baby Shower 🍼</h1>
 
-  <p class="subtitle">
-    ¿Cuánto sabés sobre bebés?  
-    ¡Respondé las 20 preguntas y descubrilo!
-  </p>
+  <div class="welcome">
+    <h2>✨ Andrea y Martin ✨</h2>
+
+    <p>
+      ¡Vamos a jugar para celebrar la llegada de su nuevo tesoro! 👶🏼💛
+      <br><br>
+      Respondé las 20 preguntas y descubrí cuánto sabés sobre bebés.
+    </p>
+  </div>
 
   <div class="animals">
     <div class="animal">🦌</div>
@@ -165,7 +197,7 @@
   <div id="resultado"></div>
 
   <div class="footer">
-    Baby Shower Woodland Theme 🌿
+    Woodland Baby Shower 🌿
   </div>
 
 </div>
@@ -315,17 +347,32 @@ const resultado = document.getElementById("resultado");
 let mensaje = "";
 
 if(puntaje <= 7){
-mensaje = "🌱 ¡Todavía te falta aprender un poquito sobre bebés!";
+mensaje = `
+😅 Sabés muy poco sobre bebés.
+<br><br>
+🚫 Definitivamente NO estás capacitado para cuidar al nuevo integrante de la familia de Andrea y Martin.
+<br><br>
+🍼 ¡Necesitás más práctica cambiando pañales!
+`;
 }
 else if(puntaje <= 14){
-mensaje = "🧸 ¡Muy bien! Sabés bastante sobre bebés.";
+mensaje = `
+😊 Sabés algo sobre bebés.
+<br><br>
+⚠️ Tal vez Andrea y Martin te dejarían cuidar al bebé… pero solo por 5 minutos 😂
+`;
 }
 else{
-mensaje = "👑 ¡Increíble! Sos un experto en bebés.";
+mensaje = `
+🌟 ¡Sabés muchísimo sobre bebés!
+<br><br>
+✅ Estás oficialmente capacitado para ayudar a cuidar al nuevo integrante de la familia de Andrea y Martin 👶🏼💛
+`;
 }
 
 resultado.innerHTML = `
-Tu puntaje fue: ${puntaje} / 20 <br><br>
+🎉 Tu puntaje fue: ${puntaje} / 20 🎉
+<br><br>
 ${mensaje}
 `;
 
